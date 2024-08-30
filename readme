@@ -1,0 +1,53 @@
+# /project
+#     /assets
+#         /css
+#             - style.css
+#             - AddToCart.css
+#         /js
+#             - script.js
+#             - AddToCart.js
+#         /images
+#             - coffee.jpg
+#             - drinks.jpg
+#             - snacks.jpg
+#     /pages
+#         - index.html
+#         - about.html
+#         - contact.html
+#         - category.html
+#         - products.html
+#         - cart.html
+#     - README.md
+
+
+# # Local Business Cafe
+
+# ## Overview
+# The Local Business Cafe is a fictional local business that requires a fully functional and responsive website to promote their cafe menu, including coffee, drinks, and snacks. This project implements the necessary features for the cafe's website.
+
+# ## Pages
+# - **Home Page**: Introduces the business and highlights its unique selling points.
+# - **About Page**: Provides detailed information about the business.
+# - **Contact Page**: Includes contact information and a contact form.
+# - **Category Page**: Displays various menu categories.
+# - **Products Page**: Displays products with descriptions, prices, and images.
+# - **Cart Page**: Allows users to add and remove items from the cart and view the total price.
+
+# ## Technologies Used
+# - HTML
+# - CSS
+# - JavaScript
+
+# ## How to Run
+# 1. Clone the repository.
+# 2. Navigate to the project directory.
+# 3. Open `index.html` in your browser to view the homepage.
+
+# ## Deployment
+# The project is deployed on GitHub Pages. You can view the live site [here](https://your-username.github.io/local-business-cafe).
+
+# ## Contact
+# For any questions or inquiries, please contact us via the [contact form](pages/contact.html).
+
+# ## License
+# This project is licensed under the MIT License.

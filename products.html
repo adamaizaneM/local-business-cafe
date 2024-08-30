@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="category.html">Category</a>
+    <a href="products.html">Products</a>
+    <a href="#" id="cartLink" onclick="toggleCart()">Cart (<span id="cartCount">0</span>)</a>
+  </nav>
+
+  <header>
+    <h1>Our Products</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Product List</h2>
+
+      <!-- Sorting and Searching Controls -->
+      <div class="controls">
+        <button onclick="sortProducts('asc')">Sort by Price: Low to High</button>
+        <button onclick="sortProducts('desc')">Sort by Price: High to Low</button>
+        <input type="text" id="searchInput" placeholder="Search products..." onkeyup="filterProducts()">
+      </div>
+      
+      <!-- Product Container -->
+      <div id="productContainer">
+        <!-- Product 1: Cafe -->
+        <article class="product" data-price="0" data-name="Cafe Interior">
+          <img src="images/cafe.png" alt="Cafe Interior">
+          <div class="product-details">
+            <h3>Cafe Interior</h3>
+            <p>Description: Enjoy a relaxing atmosphere at our beautifully designed cafe.</p>
+            <p>Price: Free Entry</p>
+            <button class="add-to-cart" onclick="addToCart('Cafe Interior', 0)">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Product 2: Cake -->
+        <article class="product" data-price="15" data-name="Delicious Cake">
+          <img src="images/cake.png" alt="Cake">
+          <div class="product-details">
+            <h3>Delicious Cake</h3>
+            <p>Description: A beautifully decorated cake, perfect for any celebration.</p>
+            <p>Price: $15.00</p>
+            <button class="add-to-cart" onclick="addToCart('Delicious Cake', 15)">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Product 3: Cappuccino -->
+        <article class="product" data-price="4" data-name="Cappuccino">
+          <img src="images/cappucino.jpg" alt="Cappuccino">
+          <div class="product-details">
+            <h3>Cappuccino</h3>
+            <p>Description: A rich and creamy cappuccino with a sprinkle of chocolate.</p>
+            <p>Price: $4.00</p>
+            <button class="add-to-cart" onclick="addToCart('Cappuccino', 4)">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Product 4: Fresh Juices -->
+        <article class="product" data-price="3.5" data-name="Fresh Juices">
+          <img src="images/Drinks.png" alt="Fresh Juices">
+          <div class="product-details">
+            <h3>Fresh Juices</h3>
+            <p>Description: A variety of fresh juices to energize your day.</p>
+            <p>Price: $3.50 per glass</p>
+            <button class="add-to-cart" onclick="addToCart('Fresh Juices', 3.5)">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Product 5: Espresso -->
+        <article class="product" data-price="2.5" data-name="Espresso">
+          <img src="images/espresso.jpg" alt="Espresso">
+          <div class="product-details">
+            <h3>Espresso</h3>
+            <p>Description: A shot of strong espresso for a quick energy boost.</p>
+            <p>Price: $2.50</p>
+            <button class="add-to-cart" onclick="addToCart('Espresso', 2.5)">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Product 6: Latte -->
+        <article class="product" data-price="4.5" data-name="Latte">
+          <img src="images/latte.jpg" alt="Latte">
+          <div class="product-details">
+            <h3>Latte</h3>
+            <p>Description: A smooth and creamy latte with beautiful latte art.</p>
+            <p>Price: $4.50</p>
+            <button class="add-to-cart" onclick="addToCart('Latte', 4.5)">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Product 7: Pastries -->
+        <article class="product" data-price="3" data-name="Fresh Pastries">
+          <img src="images/pastry.png" alt="Pastries">
+          <div class="product-details">
+            <h3>Fresh Pastries</h3>
+            <p>Description: A selection of freshly baked pastries, perfect with coffee.</p>
+            <p>Price: $3.00 each</p>
+            <button class="add-to-cart" onclick="addToCart('Fresh Pastries', 3)">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Product 8: Sandwich -->
+        <article class="product" data-price="5" data-name="Classic Sandwich">
+          <img src="images/sandwich.png" alt="Sandwich">
+          <div class="product-details">
+            <h3>Classic Sandwich</h3>
+            <p>Description: A healthy and delicious sandwich made with fresh ingredients.</p>
+            <p>Price: $5.00</p>
+            <button class="add-to-cart" onclick="addToCart('Classic Sandwich', 5)">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Product 9: Herbal Tea -->
+        <article class="product" data-price="2.5" data-name="Herbal Tea">
+          <img src="images/tea.png" alt="Tea">
+          <div class="product-details">
+            <h3>Herbal Tea</h3>
+            <p>Description: A calming cup of herbal tea brewed to perfection.</p>
+            <p>Price: $2.50</p>
+            <button class="add-to-cart" onclick="addToCart('Herbal Tea', 2.5)">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Additional products can be added here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="cart-modal">
+    <div class="cart-modal-content">
+      <span class="close" onclick="toggleCart()">&times;</span>
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <p>Total: $<span id="cartTotal">0.00</span></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Our Website</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

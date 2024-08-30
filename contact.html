@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="category.html">Category</a>
+    <a href="products.html">Products</a>
+    <a href="#" id="cartLink" onclick="toggleCart()">Cart (<span id="cartCount">0</span>)</a>
+  </nav>
+
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Get in Touch</h2>
+      <form>
+        <input type="text" name="name" placeholder="Your Name" required>  <br>
+        <input type="email" name="email" placeholder="Your Email" required> <br>
+        <textarea name="message" placeholder="Your Message" required></textarea> <br>
+        <button type="submit">Send Message</button> <br>
+      </form>
+    </section>
+  </main>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="cart-modal">
+    <div class="cart-modal-content">
+      <span class="close" onclick="toggleCart()">&times;</span>
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <p>Total: $<span id="cartTotal">0.00</span></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Our Website</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
